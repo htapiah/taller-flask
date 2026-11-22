@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block título %}Registros{% endblock %}
+{% block contenido %}
+    <h1>Registros guardados</h1>
+    {% if registros %}
+        <table>
+            <tr><th>Ejercicio</th><th>Datos</th><th>Resultado</th></tr>
+            {% for r in registros %}
+            <tr><td>{{ r.ejercicio }}</td><td>{{ r.detalle }}</td><td>{{ r.resultado }}</td></tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Aún no hay registros. Usa los ejercicios para crear algunos.</p>
+    {% endif %}
+{% endblock %}
+
